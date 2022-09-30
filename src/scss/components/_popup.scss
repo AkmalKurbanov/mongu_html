@@ -1,0 +1,41 @@
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.59);
+  @include aic-jcc;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+
+  &__window {
+    background-color: $wc;
+    border-radius: rem(15);
+    text-align: center;
+    max-width: rem(500);
+    width: 100%;
+    height: rem(572);
+    @include aic-jcc-fdc;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: rem(15);
+      right: rem(15);
+    }
+
+    img {
+      max-width: rem(270);
+      width: 100%;
+      margin: rem(35) 0;
+    }
+
+    h2 {
+      font-size: rem(30);
+      font-weight: 400;
+      line-height: rem(36.57);
+    }
+  }
+}

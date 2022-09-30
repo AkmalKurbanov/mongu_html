@@ -1,1 +1,34 @@
-header 1
+header.header
+  .container
+    .header__wrap 
+      .logo 
+        a(href="/")
+          img(src="assets/img/logo-black.svg", alt="")
+      .nav
+        mixin list(data)
+          ul
+            each item, index in  data.items
+              if index == 0
+                li.active
+                  a(href="#")=item.title
+                  if item.sublevel 
+                    i.fal.fa-angle-down
+                    +list(item)
+              else
+                li.nav__item
+                  a(href="#")=item.title
+                  if item.sublevel 
+                    i.fal.fa-angle-down
+                    +list(item)
+        - var data = {"items": [{"title": "Главная"}, {"title": "Туры","sublevel": true,"items": [{"title": "Туры 1"}, {"title": "Туры 2"}, {"title": "Туры 3"}, {"title": "Туры 4"}]},{"title": "Аренда"},{"title": "События"},{"title": "Галерея"},{"title": "О нас"},{"title": "Контакты"}]}
+        +list(data)
+
+      include ../../includes/social-black.pug
+
+      .search
+        .search__icon
+          i.icon-search
+        form(action="#") 
+          .search__input
+
+

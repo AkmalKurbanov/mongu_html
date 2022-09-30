@@ -1,0 +1,62 @@
+.tours {
+  padding-bottom: rem(35);
+
+  &__category {
+    margin-bottom: rem(70);
+    margin-top: rem(10);
+  }
+
+  &__category-item {
+    @include aic;
+    border: rem(1) solid $mc;
+    border-radius: rem(17);
+    min-height: rem(58);
+    padding: 0 rem(15);
+    box-sizing: border-box;
+    
+    &:hover {
+      .tours__category-name {
+        color: $mc;
+      }
+    }
+  }
+  
+  &__category-name {
+    font-size: rem(14);
+    font-weight: 600;
+    color: $bc;
+    transition: $tr;
+  }
+
+  &__category-icon {
+    max-width: rem(45);
+    width: 100%;
+    margin-right: rem(10);
+  }
+
+  &__wrap {
+    @include aifs-jfcsb;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+    border-radius: rem(23);
+    overflow: hidden;
+    width: calc(33.33% - 17px);
+    margin-bottom: rem(34);
+  }
+
+  &__item-info {
+    padding: rem(15) rem(20) rem(20) rem(20);
+  }
+
+  &__item-name {
+    font-weight: 600;
+    margin-bottom: rem(15);
+  }
+
+  &__item-desc {
+    line-height: rem(19.2);
+  }
+}

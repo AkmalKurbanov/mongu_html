@@ -1,0 +1,33 @@
+.booking-form {
+  padding-bottom: rem(70);
+
+  &__btn {
+    @include aic;
+
+    .btn {
+      margin-right: rem(25);
+    }
+
+    p {
+      color: $bc;
+    }
+  }
+
+  form {
+    margin-top: rem(30);
+  }
+
+  &__wrap {
+    @include aifs-jfcsb;
+  }
+
+  &__col {
+    &:first-child {
+      width: 57%;
+    }
+
+    &:last-child {
+      width: 25%;
+    }
+  }
+}

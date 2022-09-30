@@ -1,0 +1,35 @@
+header.header.header--transparent
+  .container
+    .header__wrap 
+      .logo 
+        a(href="/")
+          img(src="assets/img/logo-white.svg", alt="")
+      .nav
+        mixin list(data)
+          ul
+            each item, index in  data.items
+              if index == 0
+                li.active
+                  a(href="#")=item.title
+                  if item.sublevel 
+                    i.icon-angle-down
+                    +list(item)
+              else
+                li
+                  a(href="#")=item.title
+                  if item.sublevel 
+                    i.icon-angle-down
+                    +list(item)
+        - var data = {"items": [{"title": "Главная"}, {"title": "Туры","sublevel": true,"items": [{"title": "Туры 1"}, {"title": "Туры 2"}, {"title": "Туры 3"}, {"title": "Туры 4"}]},{"title": "Аренда"},{"title": "События"},{"title": "Галерея"},{"title": "О нас"},{"title": "Контакты"}]}
+        +list(data)
+
+      include ../../includes/social-white.pug
+
+      .search
+        .search__icon.search-js
+          i.icon-search
+        form(action="#") 
+          .search__input
+            input(type="text")
+
+      .lang 

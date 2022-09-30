@@ -4,10 +4,59 @@ block title
 block main
   .wrapper
     .content
-      include includes/header/header
- 
+      include includes/hero
+      include includes/kind
 
-     
+      .img-group.gr-bg
+        .container
+          .img-group__wrap
+            .img-group__col
+              .img-group__images
+                .img-group__item
+                  img(src="assets/img/img1.jpg", alt="")
+                .img-group__item
+                  img(src="assets/img/img2.jpg", alt="")
+                .img-group__item
+                  img(src="assets/img/img3.jpg", alt="")
+            .img-group__col
+              .title-wrap
+                h2.title О НАС
+                h3.subtitle Кыргызская Ассоциация Туризма <br> Основанного на Сообществах (CBT)
+              p.text-fz20 Кыргызская Ассоциация Туризма <br> Основанного на Сообществах (КАТОС) <br> «Хоспиталити Кыргызстан», ведущая в <br> стране организация по лучшим <br> достижениям и инновациям ТОС, является <br> в этом направлении основной движущей <br> силой. Главной целью работы Ассоциации <br> является улучшение условий жизни <br> в отдаленных горных регионах путем <br> развития устойчивой и полноценной <br> модели экотуризма с использованием <br> местных природных и рекреационных ресурсов.  
+                a(href="#").btn Подробнее 
+              
+      include includes/popular
+      include includes/events
+      include includes/pass-form
+
+      .img-group
+        .container
+          .img-group__wrap
+            .img-group__col
+              .title-wrap
+                h2.title АРЕНДА
+                h3.subtitle Вы можете также у нас арендовать <br> туристические снаряжения
+              .icon-list 
+                mixin icon(icon,name)  
+                  .icon-list__item
+                    .icon-list__icon
+                      img(src="assets/img/icon"+icon+".png", alt="")
+                    .icon-list__name=name
+                +icon('1','Палатка')     
+                +icon('2','Спальный мешок')     
+                +icon('3','Каремат')     
+                +icon('4','Рюкзак трекинговый')     
+                +icon('5','Кемпинговый газ')     
+                +icon('6','Велосипед')
+              a.btn(href="#") Арендовать        
+            .img-group__col
+              .img-group__images
+                .img-group__item
+                  img(src="assets/img/img1.jpg", alt="")
+                .img-group__item
+                  img(src="assets/img/img2.jpg", alt="")
+                .img-group__item
+                  img(src="assets/img/img3.jpg", alt="")
 
     include includes/footer/footer
 

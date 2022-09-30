@@ -7,12 +7,15 @@
 // @import "../../node_modules/--/--/";
 
 @import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/swiper/swiper-bundle.min.css";
+@import "../../node_modules/jquery-ui/themes/base/datepicker.css";
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
 //---------------------------------------------
 
 // подключение сгенерированных иконок(fontello),
 // FontAwesome
 
-// @import "../assets/icons/fontello/--/--/";
+@import "../assets/icons/fontello/css/icon.css";
 // @import "../assets/icons/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css";
 
 //---------------------------------------------
@@ -22,6 +25,7 @@
 @import "fonts";
 @import "variables";
 @import "mixins/media";
+@import "mixins/flex";
 
 
 //---------------------------------------------
@@ -33,4 +37,35 @@
 
 @import "components/base";
 @import "components/header";
+@import "components/hero";
+@import "components/booking";
+@import "components/block-tour";
+@import "components/kind";
+@import "components/img-group";
+@import "components/popular";
+@import "components/events";
+@import "components/pass-form";
+@import "components/contacts";
+@import "components/breadcrumbs";
+@import "components/tours";
+@import "components/media";
+@import "components/booking-form";
+@import "components/popup";
+@import "components/gallery-container";
+@import "components/accordion";
+@import "components/detail";
+@import "components/articles";
+@import "components/about";
 @import "components/footer";
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+.kind
+  .container
+    .title-wrap.title-wrap  
+      h2.title ВИДЫ ТУРОВ
+    .nav
+      .swiper-button-prev.nav-btn 
+      .swiper-button-next.nav-btn 
+    .swiper-container.kind-slider 
+      .swiper-wrapper
+        mixin kind(img,icon,name)
+          .swiper-slide
+            a(href="#").kind__item.shine-ef 
+              .kind__img
+                img(src="assets/img/kind"+img+'.jpg', alt="") 
+              .kind__item-desc
+                .kind__icon  
+                  img(src="assets/img/kind-"+icon+'.png', alt="")
+                .kind__name!=name
+
+        +kind('1','horse','Конный <br> тур')
+        +kind('2','walk','Пеший <br> тур')
+        +kind('3','bike','Велотур')
+        +kind('4','winter','Зимний <br> тур')

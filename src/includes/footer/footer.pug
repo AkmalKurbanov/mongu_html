@@ -1,1 +1,50 @@
-div 2
+footer.footer
+  .footer__top
+    .container
+      .footer__wrap 
+        .footer__col
+          .logo    
+            a(href="#") 
+              img(src="assets/img/logo-white.svg", alt="")  
+        .footer__col
+          .nav
+            mixin list(data)
+              ul
+                each item, index in  data.items
+                  if index == 0
+                    li.active
+                      a(href="#")=item.title
+                      if item.sublevel 
+                        i.icon-angle-down
+                        +list(item)
+                  else
+                    li
+                      a(href="#")=item.title
+                      if item.sublevel 
+                        i.icon-angle-down
+                        +list(item)
+            - var data = {"items": [{"title": "Главная"},{"title": "Туры"},{"title": "Аренда"},{"title": "О нас"},{"title": "Новости"},{"title": "Галерея"},{"title": "Контакты"}]}
+            +list(data)
+        .footer__col
+          h3.footer__title Мы в соц. сетях
+          include ../social-white
+        .footer__col
+          h3.footer__title Контакты
+          .list-contacts
+            ul
+              mixin contacts(icon, name, place, phone) 
+                li
+                  span
+                    i(class="icon-"+icon)
+                  if place 
+                    !=name
+                  else
+                    a(href="#")!=name
+                      if phone == "phone"
+                        span.messenger 
+                          i.icon-whats    
+              +contacts('marker','Кыргызстан, Иссык-Кульская обл., <br> г. Каракол, ул. Абдрахманова, 123, <br> кв. 20', 'place','')   
+              +contacts('envelope','cbtkarakol@gmail.com','')   
+              +contacts('phone','+996 555 150 795','', 'phone')   
+  .footer__bottom 
+    p © Copyright 2022 СBT Karakol All rights reserved

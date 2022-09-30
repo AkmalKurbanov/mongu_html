@@ -1,0 +1,42 @@
+include ../includes/breadcrumbs
+.tours 
+  .container
+    .title-wrap 
+      h2.title Туры
+    .tours__category  
+      .swiper-container.tours-js
+        .swiper-wrapper
+          mixin category(icon, name)
+            .swiper-slide  
+              a(href="#").tours__category-item  
+                .tours__category-icon
+                  img(src="assets/img/category-"+icon+".png", alt="")  
+                .tours__category-name=name
+        
+          +category('horse','Конные туры')      
+          +category('walk','Пешие туры')      
+          +category('bike','Велотуры')      
+          +category('winter','Зимние туры')      
+          +category('culture','Культурные туры')      
+    .tours__wrap
+      mixin tour
+        .tours__item 
+          .tours__item-img
+            img(src="assets/img/tour.jpg", alt="") 
+          .tours__item-info
+            .tours__item-name Алтын-Арашан
+            .tours__item-desc Алтын-Арашан (в переводе «Золотой источник») <br>
+              |— это высокогорное ущелье в восточной части <br>
+              |хребта Терскей-Ала-Тоо, находящееся 
+      +tour 
+      +tour 
+      +tour 
+      +tour 
+      +tour 
+      +tour 
+      +tour 
+      +tour 
+      +tour 
+
+
+       

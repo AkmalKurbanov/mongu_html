@@ -1,0 +1,46 @@
+include ../includes/breadcrumbs
+.contacts 
+  .container 
+    .contacts__wrap 
+      .contacts__col
+        #map
+      .contacts__col
+        .title-wrap
+          h2.title КОНТАКТЫ
+        .list-contacts.list-contacts--dark
+          ul
+            mixin contacts(icon, name, place, phone) 
+              li
+                span
+                  i(class="icon-"+icon)
+                if place 
+                  !=name
+                else
+                  a(href="#")!=name
+                    if phone == "phone"
+                      span.messenger 
+                        i.icon-whats    
+            +contacts('user','Азамат Асанов, координатор', 'place','')   
+            +contacts('marker','Кыргызстан, Иссык-Кульская обл., <br> г. Каракол, ул. Абдрахманова, 123, <br> кв. 20', 'place','')   
+            +contacts('envelope','cbtkarakol@gmail.com','')   
+            +contacts('phone','+996 555 150 795','', 'phone')   
+
+
+
+script(src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full")
+script.
+    var map;
+    DG.then(function () {
+    map = DG.map('map', {
+    center: [42.494135, 78.393136],
+    zoom: 17
+    });
+    var myIcon = L.icon({
+    iconUrl: 'assets/img/marker.svg',
+    iconSize: [39, 49],
+    });
+    DG.marker([42.494500, 78.393136], {
+    icon: myIcon
+    }).addTo(map).bindPopup('CBT Karakol');
+
+    });

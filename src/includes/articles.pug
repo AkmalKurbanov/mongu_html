@@ -1,0 +1,26 @@
+include ../includes/breadcrumbs
+.articles 
+  .container 
+    .title-wrap
+      h2.title СОБЫТИЯ
+      mixin article
+        .articles__item 
+          .articles__img
+            img(src="assets/img/article.jpg", alt="")
+          .articles__desc-wrap 
+            .articles__title Фестиваль «Нооруз»
+            .article-date 
+              span
+                i.icon-user
+                | СBT KARAKOL
+              span 21 марта 2022 
+            .articles__desc Lorem Ipsum — это просто текст-пустышка полиграфической и наборной индустрии. Lorem Ipsum был стандартным фиктивным текстом в отрасли с 1500-х годов, когда неизвестный печатник взял гранку шрифта и перемешал ее, чтобы сделать книгу образцов шрифтов. Он пережил не только пять столетий, но и скачок в электронный набор текста, оставаясь практически неизменным. Он был популяризирован в 1960-х годах с выпуском
+            a.btn(href="#") Подробнее  
+      +article
+      +article
+      +article
+      +article
+      +article
+      +article
+
+

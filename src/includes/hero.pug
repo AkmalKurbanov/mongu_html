@@ -1,0 +1,54 @@
+.hero 
+  include ../includes/header/header-transparent.pug
+  .swiper-container.hero-js
+    .swiper-wrapper
+      mixin hero(img)
+        .swiper-slide   
+          .hero__item(style=`background-image: url('assets/img/hero${img}.jpg')`)
+      +hero('1')
+      +hero('2')
+      +hero('1')
+      +hero('2')
+  .container
+    h1.hero__title Лучше гор <br> могут быть <br> только горы     
+    .booking
+      h2.booking__title Бронирование
+      .booking__wrap
+        .booking__col
+          form(action="")
+            .booking__item-wrap
+              .booking__item.booking__item--date
+                .booking__item-icon 
+                  i.icon-colendar
+                div
+                  .booking__item-title Дата 
+                  input(type="text" autocomplete="off")#datepicker 
+              .booking__item
+                .booking__item-icon 
+                  i.icon-user
+                div
+                  .booking__item-title Гости 
+                  .person-count
+                    input(type="number" value="2" min="1")
+                    span персоны
+              button.btn Бронировать
+        .booking__col
+          p Кыргызстан — это настоящая жемчужина Центральной Азии и одна из самых красивых и самобытных стран мира.
+
+    .block-tour 
+      .swiper-container.block-tour-slider 
+        .swiper-wrapper
+          mixin block-tour(img,name,desc)
+            .swiper-slide
+              a(href="#").block-tour__item 
+                .block-tour__img
+                  img(src="assets/img/block-tour"+img+'.jpg', alt="") 
+                .block-tour__item-desc
+                  .block-tour__name=name
+                  .block-tour__desc=desc
+
+          +block-tour('1','Алтын-Арашан','2 дневный тур')
+          +block-tour('2','озеро Алаколь','3-4 дневный тур')
+          +block-tour('3','Каракольское ущелье','2 дневный тур')
+          +block-tour('4','Ущелье Джети-Огуз','5-6 дневный тур')
+          +block-tour('5','Энильчек','6 дневный тур')

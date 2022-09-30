@@ -1,0 +1,42 @@
+include ../includes/breadcrumbs
+.booking-form
+  .container
+    .title-wrap
+      h2.title ПОГРАНИЧНЫЙ ПРОПУСК
+    .booking-form__wrap
+      .booking-form__col
+        p Здесь Вы можете забронировать наиболее подходящий для Вас дату для похода в тур
+        br
+        p Для этого нам требуется инфо от отправителя:
+        form(action="")
+          .input-wrap
+            mixin input(label,id)
+              .input 
+                label(for=id)=label
+                input(type="text" id=id) 
+            +input('Ф.И.О гостя','name')
+            +input('Номер телефона','phone')
+            +input('Email','email')
+          .booking-form__btn
+            button(type="submite").btn Отправить
+            p Наш специалист с <br> Вами свяжется
+      .booking-form__col
+        .list-contacts.list-contacts--dark
+          ul
+            mixin contacts(icon, name, place, phone) 
+              li
+                span
+                  i(class="icon-"+icon)
+                if place 
+                  !=name
+                else
+                  a(href="#")!=name
+                    if phone == "phone"
+                      span.messenger 
+                        i.icon-whats    
+            +contacts('user','Азамат Асанов, координатор', 'place','')   
+            +contacts('marker','Кыргызстан, Иссык-Кульская обл., <br> г. Каракол, ул. Абдрахманова, 123, <br> кв. 20', 'place','')   
+            +contacts('envelope','cbtkarakol@gmail.com','')   
+            +contacts('phone','+996 555 150 795','', 'phone')   
+
+include ../includes/popup

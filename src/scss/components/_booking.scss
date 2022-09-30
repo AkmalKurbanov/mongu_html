@@ -1,0 +1,188 @@
+.booking {
+  position: relative;
+  z-index: 1;
+
+  p {
+    color: rgba($wc, .8);
+    font-size: rem(25);
+    line-height: rem(37.5);
+    margin: 0;
+  }
+
+  &__wrap {
+    @include aic-jfcsb;
+
+  }
+
+  &__col {
+    &:first-child {
+      width: 40%;
+    }
+
+    &:last-child {
+      width: 57%;
+    }
+  }
+
+  &__title {
+    color: $wc;
+    margin-bottom: rem(15);
+  }
+
+  &__item-wrap {
+    @include aic;
+  }
+
+  &__item {
+    background-color: $wc;
+    min-height: rem(55);
+    max-width: rem(200);
+    width: 100%;
+    border-radius: rem(60);
+    @include aic;
+    padding: rem(8) rem(15);
+    margin-right: rem(14);
+ 
+    &:nth-child(2) {
+      margin-right: rem(7);
+    }
+
+    input {
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: rem(21.94);
+      width: 100%;
+    }
+
+    &--date {
+      position: relative;
+
+      .ui-datepicker-trigger {
+        font-family: icon;
+        position: absolute;
+        right: rem(15);
+        top: 20px;
+        cursor: pointer;
+      }
+
+      input {
+        margin-left: rem(-52);
+        padding-left: rem(-52);
+      }
+    }
+
+    .person-count {
+      @include aic;
+
+      input {
+        width: rem(40);
+      }
+
+      span {
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: rem(21.94);
+      }
+    }
+  }
+
+  &__item-icon {
+    margin-right: rem(15);
+  }
+
+  &__item-title {
+    color: $gc;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: rem(17.07);
+  }
+}
+
+#datepicker {
+  padding-left: 50px;
+  pointer-events: none;
+}
+
+.ui-datepicker {
+  background-color: $wc;
+  z-index: 10 !important;
+  width: rem(220);
+  border-radius: rem(20);
+  padding: rem(5);
+  box-shadow: 0px 3px 53px rgba(0, 0, 0, 0.11);
+  margin-top: rem(9);
+
+  .ui-datepicker-title {
+    font-weight: 600;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    top: rem(2);
+    @include aic-jcc;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($mc, .5);
+
+      &:before {
+        color: rgba($wc, .8);
+      }
+    }
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    &:before {
+      position: absolute;
+      content: '\e802';
+      font-family: icon;
+      transition: $tr;
+      font-size: rem(10);
+    }
+  }
+
+  .ui-datepicker-prev {
+    left: 0;
+
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+
+  .ui-datepicker-next {
+    right: 0;
+  }
+
+  td a,
+  td span {
+    text-align: center;
+  }
+
+  .ui-datepicker-unselectable {
+    span {
+      color: #ccc;
+      cursor: default;
+      background: none;
+    }
+  }
+
+  .ui-state-default {
+    color: $bc;
+    background-color: #FCE6C8;
+  }
+
+  .ui-state-active {
+    background-color: $mc;
+    color: $wc;
+  }
+
+  .ui-datepicker-close {
+    display: none;
+  }
+
+  .ui-datepicker-current.ui-state-default.ui-priority-secondary.ui-corner-all {
+    float: none;
+  }
+
+}

@@ -1,0 +1,37 @@
+.articles {
+  &__item {
+    background: #F4F6FD;
+    border-radius: rem(23);
+    margin-bottom: rem(40);
+    @include aistr;
+    overflow: hidden;
+  }
+
+  &__desc-wrap {
+    padding: rem(30) rem(150) rem(30) rem(30);
+  }
+
+  &__title {
+    font-size: rem(20);
+    font-weight: 600;
+    margin-bottom: rem(25);
+  }
+
+  .article-date {
+    margin-bottom: rem(35);
+  }
+
+  &__img {
+    width: 50%;
+  }
+
+  &__desc-wrap {
+    width: 50%;
+  }
+
+  &__desc {
+    color: $bc;
+    line-height: rem(19);
+    margin-bottom: rem(35);
+  }
+}

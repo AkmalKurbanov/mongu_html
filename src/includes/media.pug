@@ -1,0 +1,49 @@
+include ../includes/breadcrumbs
+.media#gallery
+  .container
+    .title-wrap 
+      h2.title Фото    
+    .media__wrap
+      mixin photo
+        a(href="assets/img/media.jpg" data-fancybox="gallery").media__item 
+          .media__item-img
+            img(src="assets/img/media.jpg", alt="")
+            .media__item-img-effect
+              span
+            .media__item-info
+              .media__item-name lorem
+              .media__item-desc Lorem ipsum dolor sit.
+      +photo  
+      +photo 
+      +photo 
+      +photo 
+      +photo 
+      +photo 
+      +photo 
+      +photo 
+      +photo
+    a.btn(href="#") Посмотреть еще 
+
+       
+.media.gr-bg
+  .container
+    .title-wrap 
+      h2.title Видео
+    .media__wrap
+      mixin video(id)
+        .media__item 
+          .media__item-img
+            img(src="https://img.youtube.com/vi/"+id+"/maxresdefault.jpg", alt="")
+            .media__item-img-effect
+              span
+            .media__item-info
+              .media__item-name lorem
+              .media__item-desc Lorem ipsum dolor sit.
+              a(href="https://www.youtube.com/watch?v="+id data-fancybox="").playButton
+                svg(x='0px' y='0px' viewbox='0 0 213.7 213.7' enable-background='new 0 0 213.7 213.7' xml:space='preserve')
+                  polygon.triangle(fill='none' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' points='73.5,62.5 148.5,105.8 73.5,149.1')
+
+  
+      +video('s0AvMgjI9Tg') 
+      +video('4OcsKwMQhsk') 
+      +video('txUo75F3gHI') 

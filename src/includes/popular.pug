@@ -1,0 +1,22 @@
+.popular
+  .container 
+    .title-wrap.title-wrap--indent
+      h2.title ПОПУЛЯРНЫЕ МЕСТА
+    .popular__wrap
+      mixin popular(img,name,place)   
+        a(href="#").popular__item
+          img(src="assets/img/popular"+img+".jpg", alt="")
+          .popular__desc
+            .popular__name=name
+            .popular__place=place
+      +popular('1','Приют “Сирота” высота 2800м','Каракол')
+      +popular('2','Озеро “Ала Куль” высота 3500м','Каракол')
+      +popular('3','Скала “Разбитое сердце” высота 2000м','Джети-Огуз')
+      +popular('4','Альплагерь Каракол высота 2400м','Каракол')
+      +popular('5','Алтын - Арашан высота 2600м','Ак-Суу')
+      +popular('5','Алтын - Арашан высота 2600м','Ак-Суу')
+      +popular('6','Озеро “Мерцбахера” высота 3304м','Энильчек')
+      +popular('7','Долина “Кок-Жайык” высота 2050м','Джети-Огуз')
+      +popular('8','Каньон “Сказка” высота 1500м','Тосор')
+
+

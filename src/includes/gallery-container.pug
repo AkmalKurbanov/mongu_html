@@ -1,0 +1,30 @@
+.gallery-container
+  .swiper-container.gallery-main
+    .swiper-wrapper
+      mixin gallery-main
+        .swiper-slide(style="background-image: url('assets/img/gallery.jpg')")
+      +gallery-main
+      +gallery-main
+      +gallery-main
+      +gallery-main
+      +gallery-main
+      +gallery-main
+      +gallery-main
+      +gallery-main
+        
+      
+    .swiper-button-prev
+    .swiper-button-next
+  .swiper-container.gallery-thumbs
+    .swiper-wrapper
+      mixin gallery-thumb(img)
+        .swiper-slide(style=`background-image: url('assets/img/gallery${img}.jpg')`)
+  
+      +gallery-thumb('1')
+      +gallery-thumb('2')
+      +gallery-thumb('3')
+      +gallery-thumb('4')
+      +gallery-thumb('1')
+      +gallery-thumb('2')
+      +gallery-thumb('3')
+      +gallery-thumb('4')
