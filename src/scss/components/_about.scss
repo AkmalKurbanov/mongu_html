@@ -1,9 +1,10 @@
-.about {
+.pattern {
   img {
-    max-width: rem(559);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: rem(23);
-    margin-bottom: rem(115);
+    @include adaptiv('border-radius', 23, 14, 0);
+    @include adaptiv('min-width', 559, 150, 0);
+
+
   }
 
   h1,
@@ -13,16 +14,62 @@
   h5,
   h6,
   p {
-    margin-bottom: rem(14);
+    @include adaptiv('margin-bottom', 30, 15, 0);
   }
 
-  &__item {
+  p {
+    @include adaptiv('font-size', 20, 15, 0);
+  }
 
-    // @include aic-jfcsb;
-    img {
-      clear: both;
+  .subtitle {
+    display: block;
+    @include adaptiv('margin-bottom', 50, 25, 0);
+  }
+
+
+
+  &__item {
+    @include aic-jfcsb;
+    flex-direction: row-reverse;
+    @include adaptiv('margin-bottom', 115, 30, 0);
+
+    @include md {
+      flex-direction: column !important;
+      width: 100%;
     }
 
+    &:nth-child(2n) {
+      flex-direction: row;
+    }
+  }
 
+  &__col {
+
+    @include md {
+      width: 100%;
+    }
+
+    &:first-child {
+      @include md {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      width: 100%;
+      max-width: rem(850);
+      @include adaptiv('max-width', 850, 500, 0);
+      padding: 0 rem(20);
+
+      @include md {
+        padding: 0;
+      }
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }

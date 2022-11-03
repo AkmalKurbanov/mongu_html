@@ -9,6 +9,24 @@ body {
   height: 100%;
   position: relative;
   font-family: $montserrat;
+
+  &.no-scroll {
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($bc, .3);
+      z-index: 100;
+    }
+  }
 }
 
 
@@ -45,6 +63,10 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include xs {
+    flex-direction: column;
+  }
 }
 
 .input {
@@ -52,6 +74,14 @@ button {
   margin-bottom: rem(20);
   width: calc(50% - 35px);
   border: rem(1) solid #DCDCDC;
+
+  @include lg {
+    width: calc(50% - 10px);
+  }
+
+  @include xs {
+    width: 100%;
+  }
 
   input {
     padding: rem(15);
@@ -139,37 +169,36 @@ button {
   .title {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: rem(35);
-    line-height: rem(65);
+    @include adaptiv('font-size', 35, 20, 0);
     position: relative;
-    padding-left: rem(36);
-    margin-bottom: rem(15);
+    @include adaptiv('padding-left', 36, 20, 0);
+    @include adaptiv('margin-bottom', 50, 20, 0);
 
     &:before,
     &:after {
       position: absolute;
       content: '';
-      width: rem(7);
       top: 50%;
       transform: translateY(-50%);
       background-color: $mc;
+      @include adaptiv('width', 7, 3, 0);
     }
 
     &:before {
-      height: rem(65);
       left: 0;
+      @include adaptiv('height', 65, 30, 0);
     }
 
     &:after {
-      height: rem(53);
-      left: rem(14);
+      @include adaptiv('height', 53, 20, 0);
+      @include adaptiv('left', 14, 7, 0);
     }
   }
 
   .subtitle {
     font-weight: 500;
-    font-size: rem(27);
-    line-height: rem(31.5);
+    @include adaptiv('font-size', 27, 15, 0);
+    line-height: normal;
   }
 }
 
@@ -185,9 +214,11 @@ button {
   padding: rem(15) rem(30);
   min-height: rem(56);
   border-radius: rem(39);
+  @include adaptiv('border-radius', 39, 16, 0);
+  @include adaptiv('min-height', 56, 30, 0);
   color: $wc;
   font-weight: 700;
-  font-size: rem(20);
+  @include adaptiv('font-size', 20, 16, 0);
   cursor: pointer;
   outline: none;
   border: none;
@@ -225,6 +256,14 @@ button {
 // logo
 .logo {
   max-width: rem(125);
+
+  @include lg {
+    max-width: rem(90);
+  }
+
+  @include sm {
+    max-width: rem(75);
+  }
 }
 
 // logo end
@@ -259,7 +298,7 @@ button {
         }
 
         &:hover {
-          color: $mc;
+          color: $mc !important;
         }
       }
     }
@@ -289,13 +328,13 @@ button {
 
 // text
 .text-fz20 {
-  font-size: rem(20);
-  line-height: rem(26);
+  @include adaptiv('font-size', 20, 14, 0);
+  @include adaptiv('line-height', 26, 14, 0);
 }
 
 .text-fz27 {
-  font-size: rem(27);
-  line-height: rem(31);
+  @include adaptiv('font-size', 27, 16, 0);
+  @include adaptiv('line-height', 31, 24, 0);
 }
 
 // text end
@@ -309,18 +348,19 @@ button {
   }
 
   &__icon {
-    width: rem(60);
-    height: rem(60);
+
     @include aic-jcc;
     border: rem(1) solid #0057FF;
-    border-radius: rem(17);
     position: relative;
-    margin-right: rem(20);
+    @include adaptiv('margin-right', 20, 5, 0);
+    @include adaptiv('width', 60, 35, 0);
+    @include adaptiv('height', 60, 35, 0);
+    @include adaptiv('border-radius', 17, 6, 0);
   }
 
   &__name {
     font-weight: 500;
-    font-size: rem(20);
+    @include adaptiv('font-size', 20, 12, 0);
   }
 }
 
@@ -330,27 +370,29 @@ button {
 // list contacts
 .list-contacts {
   span {
-    width: rem(24);
-    height: rem(24);
-    border-radius: rem(4);
     border: rem(1) solid $wc;
     @include aic-jcc;
     display: inline-flex;
-    margin-right: rem(14);
+    @include adaptiv('width', 24, 18, 0);
+    @include adaptiv('height', 24, 18, 0);
+    @include adaptiv('border-radius', 4, 2, 0);
+    @include adaptiv('  margin-right', 14, 9, 0);
   }
 
   i {
     &.icon-marker {
-      font-size: rem(13);
+      @include adaptiv('font-size', 13, 11, 0);
     }
 
     &.icon-envelope {
       font-size: rem(11);
       margin-left: rem(-2);
+      @include adaptiv('font-size', 11, 8, 0);
     }
 
     &.icon-phone {
       font-size: rem(14);
+      @include adaptiv('font-size', 14, 11, 0);
     }
   }
 
@@ -363,6 +405,7 @@ button {
       display: inline-flex;
       margin-bottom: rem(20);
       position: relative;
+      @include adaptiv('margin-bottom', 20, 12, 0);
 
       &:last-child {
         margin-bottom: 0;
@@ -373,6 +416,7 @@ button {
   li,
   a {
     color: $wc;
+    @include adaptiv('font-size', 16, 13, 0);
   }
 
   a {
@@ -449,10 +493,15 @@ button {
 
 // rent
 .rent {
-  padding: rem(60) 0;
+  @include adaptiv('padding-top', 60, 30, 0);
+  @include adaptiv('padding-bottom', 60, 30, 0);
 
   .icon-list {
     column-count: 3 !important;
+
+    @include xs {
+      column-count: 2 !important;
+    }
   }
 
   p {
@@ -464,14 +513,24 @@ button {
   position: absolute;
   right: 0;
   top: 0;
-  font-size: rem(18);
   font-weight: 600;
   color: $bc;
   @include aic;
   border-bottom: rem(1) solid $bc;
+  @include adaptiv('font-size', 18, 14, 0);
+  padding-bottom: rem(5);
+  @include adaptiv('padding-left', 25, 18, 0);
+
+  @include sm {
+    position: relative;
+    display: inline-block;
+  }
 
   svg {
+    position: absolute;
     margin-right: rem(10);
+    @include adaptiv('width', 18, 12, 0);
+    left: 0;
   }
 }
 
@@ -483,11 +542,12 @@ button {
 // date
 .article-date {
   @include aic;
-  margin-bottom: rem(40);
+  @include adaptiv('margin-bottom', 40, 10, 0);
 
   span {
     color: #4a4a4a;
     font-weight: 300;
+    @include adaptiv('font-size', 16, 13, 0);
 
     i {
       margin-right: rem(5);
@@ -495,9 +555,9 @@ button {
     }
 
     &:first-child {
-      padding-right: rem(15);
-      margin-right: rem(15);
       border-right: rem(1) solid #4A4A4A;
+      @include adaptiv('padding-right', 15, 7, 0);
+      @include adaptiv('margin-right', 15, 7, 0);
     }
   }
 }

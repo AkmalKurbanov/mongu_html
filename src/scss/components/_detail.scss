@@ -1,14 +1,18 @@
 // desc text
 .desc-text {
-  padding-left: rem(30);
+  @include adaptiv('padding-left', 30, 15, 0);
 
   p {
-    font-size: rem(18);
-    margin-bottom: rem(30);
+    @include adaptiv('font-size', 18, 15, 0);
+    @include adaptiv('margin-bottom', 30, 20, 0);
   }
 
   &__wrap {
     @include aifs-jfcsb;
+
+    @include md {
+      flex-direction: column;
+    }
   }
 
   &__col {
@@ -17,12 +21,20 @@
     &:last-child {
       max-width: rem(390);
       margin-left: rem(100);
+      @include adaptiv('max-width', 390, 250, 0);
+      @include adaptiv('margin-left', 100, 50, 0);
+
+      @include md {
+        max-width: 100%;
+        margin: 0;
+        margin-top: rem(30);
+      }
     }
   }
 }
 
 .detail {
-  padding-bottom: rem(60);
+  @include adaptiv('padding-bottom', 60, 30, 0);
 
   h1,
   h2,
@@ -30,19 +42,19 @@
   h4,
   h5,
   h6 {
-    margin-bottom: rem(20);
+    @include adaptiv('margin-bottom', 20, 10, 0);
   }
 
   &__title {
-    font-size: rem(18);
     font-weight: 600;
-    margin-bottom: rem(30);
+    @include adaptiv('margin-bottom', 30, 10, 0);
+    @include adaptiv('font-size', 18, 15, 0);
   }
 
   &__desc {
 
     li {
-      margin-bottom: rem(15);
+      @include adaptiv('margin-bottom', 15, 10, 0);
 
       span {
         font-weight: 600;
@@ -55,13 +67,16 @@
   &__title {
     text-transform: uppercase;
     color: $bc;
-    margin-bottom: rem(30);
+    @include adaptiv('margin-bottom', 30, 10, 0);
   }
 
   &__form {
     background: #F4F6FD;
     box-shadow: 0px 4px 101px rgba(0, 0, 0, 0.03);
-    padding: rem(35) rem(30);
+    @include adaptiv('padding-top', 35, 10, 0);
+    @include adaptiv('padding-bottom', 35, 10, 0);
+    @include adaptiv('padding-left', 30, 10, 0);
+    @include adaptiv('padding-right', 30, 10, 0);
 
     form {
       @include jcc;
@@ -72,6 +87,7 @@
   .booking__item {
     max-width: 100%;
     margin-bottom: rem(25);
+    margin-right: 0;
   }
 
   .btn {

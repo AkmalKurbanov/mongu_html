@@ -1,7 +1,7 @@
 .kind {
-  padding-top: rem(100);
-  padding-bottom: rem(80);
   position: relative;
+  @include adaptiv('padding-top', 150, 140, 0);
+  @include adaptiv('padding-bottom', 80, 20, 0);
 
   .title {
     margin-left: rem(20);
@@ -12,7 +12,6 @@
   }
 
   &__item {
-    border-radius: rem(24);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -20,6 +19,7 @@
     position: relative;
     transition: all .5s;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include adaptiv('border-radius', 24, 10, 0);
 
     img {
       height: 100%;
@@ -65,20 +65,20 @@
     position: absolute;
     left: 0;
     bottom: rem(20);
-    @include aic-jcc;
+    @include aic-jfcfs;
     width: 100%;
+    padding: 0 rem(10);
   }
 
   &__icon {
-    width: rem(100);
     margin-right: rem(5);
+    @include adaptiv('width', 100, 40, 0);
   }
 
   &__name {
     font-weight: 700;
-    font-size: rem(36);
     color: $wc;
-    line-height: rem(43.2);
+    @include adaptiv('font-size', 35, 16, 0);
   }
 
   .nav {
@@ -86,14 +86,14 @@
     right: rem(15);
     top: 0;
     @include aic-jfcsb;
-    width: rem(130);
-    height: rem(58);
+    @include adaptiv('width', 130, 50, 0);
+    @include adaptiv('height', 58, 20, 0);
 
     .nav-btn {
-      width: rem(58);
-      height: rem(58);
+      @include adaptiv('width', 58, 20, 0);
+      @include adaptiv('height', 58, 20, 0);
       border: rem(1) solid #D9D9D9;
-      border-radius: rem(17);
+      @include adaptiv('border-radius', 17, 2, 0);
       position: relative;
       left: auto;
       right: auto;
@@ -110,9 +110,9 @@
       }
 
       &:after {
-        font-size: rem(14);
         color: #D9D9D9;
         transition: $tr;
+        @include adaptiv('font-size', 14, 11, 0);
       }
     }
   }

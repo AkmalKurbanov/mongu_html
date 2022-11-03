@@ -2,20 +2,23 @@
   .container 
     .title-wrap.title-wrap--indent
       h2.title СОБЫТИЯ
-    .block-tour 
-      mixin block-tour(img,name,desc)
-        .block-tour__item.block-tour__item--modify 
-          .block-tour__img
-            img(src="assets/img/event"+img+'.jpg', alt="") 
-          .block-tour__item-desc
-            div
-              .block-tour__name=name
-              .block-tour__desc=desc
-            .block-tour__item-desc-bottom 
-              a(href="#").more ПОДРОБНЕЕ
-              span 21 марта 2022
+    .swiper-container.events-slider 
+      .swiper-wrapper  
+        
+        mixin block-tour(img,name,desc)
+          .swiper-slide
+            .block-tour__item.block-tour__item--modify 
+              .block-tour__img
+                img(src="assets/img/event"+img+'.jpg', alt="") 
+              .block-tour__item-desc
+                div
+                  .block-tour__name=name
+                  .block-tour__desc=desc
+                .block-tour__item-desc-bottom 
+                  a(href="#").more ПОДРОБНЕЕ
+                  span 21 марта 2022
 
 
-      +block-tour('1','Фестиваль «Нооруз»','Процесс приготовления «Сумолок», а также "Кук чучвара", "Кук сомса" и "Кочо аш"......')
-      +block-tour('2','Фестиваль ловчих птиц СВТ Боконбаево','Показ соколиной охоты; фольклорное шоу; выставка - продажа сувениров; дегустация блюд кыргызской кухни......')
-      +block-tour('3','Безопасность в горах','Туризм в Кыргызстане в большинстве случаев так или иначе будет связан с горами. И горы, несмотря на всю свою красоту, таят в себе....')
+        +block-tour('1','Фестиваль «Нооруз»','Процесс приготовления «Сумолок», а также "Кук чучвара", "Кук сомса" и "Кочо аш"......')
+        +block-tour('2','Фестиваль ловчих птиц СВТ Боконбаево','Показ соколиной охоты; фольклорное шоу; выставка - продажа сувениров; дегустация блюд кыргызской кухни......')
+        +block-tour('3','Безопасность в горах','Туризм в Кыргызстане в большинстве случаев так или иначе будет связан с горами. И горы, несмотря на всю свою красоту, таят в себе....')

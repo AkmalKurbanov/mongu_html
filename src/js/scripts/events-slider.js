@@ -1,6 +1,4 @@
-var swiper = new Swiper(".kind-slider", {
-  slidesPerView: 4,
-  spaceBetween: 28,
+var swiper = new Swiper(".events-slider", {
   loop: true,
   speed: 1000,
   autoplay: {
@@ -14,15 +12,15 @@ var swiper = new Swiper(".kind-slider", {
 
   breakpoints: {
     0: {
-      slidesPerView: 2,
-      spaceBetween: 10,
-    },
-    768: {
-      slidesPerView: 4,
+      slidesPerView: 1,
       spaceBetween: 25,
     },
-    992: {
-      slidesPerView: 5,
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 25,
+    },
+    1200: {
+      slidesPerView: 3,
       spaceBetween: 25,
     },
   }

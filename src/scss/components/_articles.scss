@@ -1,37 +1,85 @@
 .articles {
   &__item {
     background: #F4F6FD;
-    border-radius: rem(23);
-    margin-bottom: rem(40);
+    @include adaptiv('border-radius', 23, 10, 0);
+    @include adaptiv('margin-bottom', 40, 20, 0);
     @include aistr;
     overflow: hidden;
+    @include adaptiv('min-height', 340, 220, 0);
+
+
+    @include sm {
+      flex-direction: column;
+    }
+
+    .btn {
+      @include md {
+        font-size: rem(12);
+        border-radius: rem(10);
+        min-height: rem(20);
+        padding: rem(10);
+      }
+    }
   }
 
   &__desc-wrap {
-    padding: rem(30) rem(150) rem(30) rem(30);
+    @include adaptiv('padding-top', 30, 10, 0);
+    @include adaptiv('padding-right', 150, 10, 0);
+    @include adaptiv('padding-bottom', 30, 10, 0);
+    @include adaptiv('padding-left', 30, 10, 0);
+
+    @include md {
+      padding-right: rem(10);
+    }
+
+    @include xs {
+      padding: rem(10);
+    }
   }
 
   &__title {
-    font-size: rem(20);
     font-weight: 600;
-    margin-bottom: rem(25);
+    @include adaptiv('margin-bottom', 25, 10, 0);
+    @include adaptiv('font-size', 20, 14, 0);
   }
 
   .article-date {
-    margin-bottom: rem(35);
+    @include adaptiv('margin-bottom', 35, 15, 0);
   }
 
   &__img {
     width: 50%;
+    @include aifs;
+    position: relative;
+
+    @include sm {
+      width: 100%;
+    }
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+
+      @include sm {
+        position: relative;
+      }
+    }
   }
 
   &__desc-wrap {
     width: 50%;
+
+    @include sm {
+      width: 100%;
+    }
   }
 
   &__desc {
     color: $bc;
-    line-height: rem(19);
-    margin-bottom: rem(35);
+    line-height: normal;
+    @include adaptiv('margin-bottom', 35, 15, 0);
+    @include adaptiv('font-size', 16, 13, 0);
   }
 }

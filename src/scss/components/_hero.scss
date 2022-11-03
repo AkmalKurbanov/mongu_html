@@ -1,7 +1,7 @@
 .hero {
-  height: calc(var(--vh, 1vh) * 100);
   position: relative;
-
+  padding-bottom: rem(30);
+  z-index: 101;
   .header {
     position: relative;
     z-index: 2;
@@ -35,12 +35,12 @@
   }
 
   &__title {
-    font-size: rem(96);
+    @include adaptiv('font-size', 96, 35, 0);
     font-weight: 900;
-    line-height: rem(105.6);
     color: $wc;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     margin-bottom: rem(80);
+    @include adaptiv('margin-bottom', 80, 30, 0)
   }
 }

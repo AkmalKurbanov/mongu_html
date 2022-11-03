@@ -1,6 +1,7 @@
 .media {
-  padding: rem(50) 0;
   text-align: center;
+  @include adaptiv('padding-top', 50, 30, 0);
+  @include adaptiv('padding-bottom', 50, 30, 0);
 
   .title-wrap {
     text-align: left;
@@ -16,6 +17,13 @@
     margin-bottom: rem(15);
     position: relative;
     overflow: hidden;
+
+    @include md {
+      width: calc(50% - 7px);
+    }
+    @include xs {
+      width: 100%;
+    }
   }
 
 
@@ -36,12 +44,12 @@
   }
 
   &__item-name {
-    font-size: rem(20);
     margin-bottom: rem(5);
+    @include adaptiv('font-size', 20, 15, 0);
   }
 
   &__item-desc {
-    font-size: rem(14);
+    @include adaptiv('font-size', 14, 11, 0);
   }
 
   &__item-img-effect {
@@ -112,9 +120,19 @@
     }
 
     &:hover {
+
+      .media__item-zoom,
+      .playButton {
+        opacity: 1;
+        z-index: 1;
+      }
+
       .media__item-info {
-        left: rem(20);
+        left: 0;
         transition-delay: .3s;
+        padding-top: rem(20);
+        padding-left: rem(20);
+        top: 0;
       }
 
       &:before {
@@ -148,8 +166,11 @@
       position: absolute;
       z-index: 99999;
       transition: $tr;
-      left: rem(-19);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       cursor: pointer;
+      opacity: 0;
 
       .triangle {
         transition: all .7s ease-in-out;
@@ -161,8 +182,10 @@
 
 
       svg {
-        height: rem(60);
-        width: rem(60);
+        height: rem(120);
+        width: rem(120);
+        @include adaptiv('width', 120, 50, 0);
+        @include adaptiv('height', 120, 50, 0);
       }
 
       &:hover {
@@ -177,5 +200,20 @@
     }
 
     // play button end
+
+  }
+
+  &__item-zoom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $tr;
+    opacity: 0;
+
+    svg {
+      @include adaptiv('width', 50, 20, 0);
+      @include adaptiv('height', 50, 20, 0);
+    }
   }
 }

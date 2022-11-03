@@ -2,36 +2,46 @@
   padding-bottom: rem(35);
 
   &__category {
-    margin-bottom: rem(70);
     margin-top: rem(10);
+    @include adaptiv('margin-bottom', 70, 20, 0);
   }
 
   &__category-item {
     @include aic;
     border: rem(1) solid $mc;
-    border-radius: rem(17);
-    min-height: rem(58);
-    padding: 0 rem(15);
     box-sizing: border-box;
-    
+    overflow: hidden;
+    @include adaptiv('border-radius', 17, 7, 0);
+    @include adaptiv('padding-right', 15, 7, 0);
+    @include adaptiv('padding-left', 15, 7, 0);
+    @include adaptiv('min-height', 58, 45, 0);
+
     &:hover {
+      border-color: $bc;
+
       .tours__category-name {
         color: $mc;
       }
     }
+
+    &.active {
+      border-color: $bc;
+      color: $mc;
+    }
   }
-  
+
   &__category-name {
-    font-size: rem(14);
     font-weight: 600;
     color: $bc;
     transition: $tr;
+    @include adaptiv('font-size', 14, 11, 0);
   }
 
   &__category-icon {
-    max-width: rem(45);
     width: 100%;
-    margin-right: rem(10);
+    @include adaptiv('min-width', 45, 25, 0);
+    @include adaptiv('max-width', 45, 25, 0);
+    @include adaptiv('margin-right', 10, 5, 0);
   }
 
   &__wrap {
@@ -41,22 +51,72 @@
 
   &__item {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
-    border-radius: rem(23);
     overflow: hidden;
     width: calc(33.33% - 17px);
-    margin-bottom: rem(34);
+    @include adaptiv('border-radius', 23, 14, 0);
+    @include adaptiv('margin-bottom', 34, 20, 0);
+
+    @include md {
+      width: calc(50% - 12px);
+    }
+
+    @include xs {
+      width: 100%;
+    }
+  }
+
+  &__item-img {
+    position: relative;
+    overflow: hidden;
+    @include aic-jcc;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      z-index: 2;
+      display: block;
+      content: "";
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .3));
+      transform: skewX(-25deg);
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1) rotate(2deg);
+      }
+
+      &:after {
+        animation: shine .85s;
+      }
+    }
+
+    img {
+      transition: all .7s;
+    }
   }
 
   &__item-info {
-    padding: rem(15) rem(20) rem(20) rem(20);
+    @include adaptiv('padding', 20, 10, 0);
   }
 
   &__item-name {
     font-weight: 600;
-    margin-bottom: rem(15);
+    color: $bc;
+    display: block;
+    transition: $tr;
+    @include adaptiv('font-size', 16, 14, 0);
+    @include adaptiv('margin-bottom', 15, 7, 0);
+
+    &:hover {
+      color: $mc;
+    }
   }
 
   &__item-desc {
-    line-height: rem(19.2);
+    line-height: normal;
+    @include adaptiv('font-size', 16, 12, 0);
   }
 }

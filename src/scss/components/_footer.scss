@@ -6,24 +6,92 @@
     display: flex;
     align-items: stretch;
     justify-content: flex-end;
+
+    @media(max-width: 1600px) {
+      justify-content: space-between;
+    }
+
+    @include md {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
   }
 
   .logo {
     min-width: rem(185);
+
+    @include lg {
+      min-width: rem(120);
+    }
   }
 
   &__col {
     margin-right: rem(110);
-    &:first-child{
-      @include aic;
+
+    @include lg {
+      margin-right: rem(60);
     }
-    &:last-child {
+
+    @include md {
+      width: 50%;
       margin-right: 0;
+    }
+
+    @include xs {
+      width: 100%;
+      margin-bottom: rem(20);
+    }
+
+    &:first-child {
+      @include aic;
+
+      @include md {
+        order: 1;
+        margin-bottom: rem(20);
+      }
+    }
+
+    &:nth-child(2) {
+      @include md {
+        order: 3;
+      }
+
+      @include xs {
+        order: 2;
+
+      }
+
+    }
+
+    &:nth-child(3) {
+      @include md {
+        order: 2;
+        @include aifs;
+        flex-direction: column;
+        margin-bottom: rem(20);
+      }
+
+      @include xs {
+        order: 4;
+      }
+    }
+
+    &:nth-child(4) {
+      margin-right: 0;
+
+      @include md {
+        order: 4;
+      }
+
+      @include xs {
+        order: 3;
+      }
     }
   }
 
   &__top {
-    padding: rem(40) 0 rem(30);
+    @include adaptiv('padding-top', 40, 30, 0);
+    @include adaptiv('padding-bottom', 30, 10, 0);
   }
 
 
@@ -33,12 +101,27 @@
     color: $wc;
     font-weight: 600;
     margin-bottom: rem(20);
+
+    @include lg {
+      font-size: rem(20);
+    }
   }
 
   .nav {
     ul {
       columns: 2;
       column-width: rem(150);
+
+      @media(max-width: 1600px) {
+        columns: auto;
+        column-width: auto;
+      }
+
+      @include xs {
+        columns: 2;
+      }
+
+
 
       li {
         color: $wc;
@@ -63,6 +146,14 @@
 
         a {
           color: $wc;
+
+          @include lg {
+            font-size: rem(16);
+          }
+
+          &:hover {
+            color: $mc;
+          }
         }
       }
     }

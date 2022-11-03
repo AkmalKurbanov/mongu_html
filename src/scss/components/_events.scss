@@ -1,6 +1,10 @@
 .events {
-  padding: rem(35) 0 rem(95);
+  padding-top: rem(35);
   background-color: #EFEFEF;
+  @include adaptiv('padding-bottom', 95, 35, 0);
+.swiper-wrapper{
+  padding: rem(10) 0;
+}
   .block-tour {
     display: flex;
     align-items: stretch;
@@ -8,9 +12,19 @@
     max-width: 100%;
     margin: 0;
 
-    &__item {
-      width: calc(33.33% - 17px);
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+    &__img {
+      @include adaptiv('min-height', 295, 150, 0);
     }
+
+    &__item {
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+
+      @include sm {
+        max-width: rem(400);
+        margin: auto;
+      }
+    }
+
+    &__desc {}
   }
 }

@@ -1,11 +1,25 @@
 .booking-form {
-  padding-bottom: rem(70);
+  @include adaptiv('padding-bottom', 70, 30, 0);
+
+  p {
+    @include adaptiv('font-size', 16, 14, 0);
+  }
 
   &__btn {
     @include aic;
 
+    @include xs {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .btn {
       margin-right: rem(25);
+
+      @include xs {
+        margin-right: 0;
+        margin-bottom: rem(15);
+      }
     }
 
     p {
@@ -19,15 +33,31 @@
 
   &__wrap {
     @include aifs-jfcsb;
+
+    @include md {
+      flex-direction: column;
+    }
   }
 
   &__col {
+    @include md {
+      width: 100% !important;
+    }
+
     &:first-child {
       width: 57%;
+
+      @include md {
+        margin-bottom: rem(30);
+      }
     }
 
     &:last-child {
       width: 25%;
+
+      @include lg {
+        width: 35%;
+      }
     }
   }
 }

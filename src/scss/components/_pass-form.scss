@@ -1,14 +1,17 @@
 .pass-form {
-  min-height: rem(320);
   position: relative;
-  padding: rem(50) 0;
+  @include adaptiv('min-height', 320, 200, 0);
+  @include adaptiv('padding-top', 50, 30, 0);
+  @include adaptiv('padding-bottom', 50, 30, 0);
 
-  .title-wrap {
-    margin-bottom: rem(45);
-  }
 
   &__wrap {
     @include aic-jfcsb;
+
+    @include md {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   * {
@@ -17,8 +20,12 @@
 
   p {
     font-weight: 500;
-    font-size: rem(27);
-    line-height: rem(31.5);
+    @include adaptiv('font-size', 27, 16, 0);
+    line-height: normal;
+
+    @include md {
+      margin-bottom: rem(20);
+    }
   }
 
   &:before {

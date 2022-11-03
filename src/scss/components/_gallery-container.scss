@@ -3,8 +3,12 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  height: rem(660);
-  margin-bottom: rem(30);
+  margin-bottom: rem(40);
+  @include adaptiv('height', 660, 200, 0);
+
+  @include md {
+    flex-direction: column-reverse;
+  }
 
   .swiper-container {
     margin: 0;
@@ -13,6 +17,15 @@
   .gallery-main {
     width: rem(1250);
     position: relative;
+    margin-left: rem(20);
+
+    @include md {
+      min-height: 100%;
+      width: 100%;
+      margin-left: 0;
+    }
+
+
 
     .swiper-slide {
       position: relative;
@@ -27,8 +40,6 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: rem(58);
-        height: rem(58);
         border-radius: 100%;
         border: rem(1) solid $mc !important;
         transition: $tr;
@@ -37,6 +48,8 @@
         font-weight: 700;
         margin: 0;
         cursor: pointer;
+        @include adaptiv('width', 58, 35, 0);
+        @include adaptiv('height', 58, 35, 0);
 
         &:hover {
           background-color: $mc;
@@ -58,6 +71,10 @@
   .gallery-thumbs {
     order: -1;
     width: rem(230);
+
+    @include md {
+      display: none;
+    }
 
     .swiper-slide {
       height: rem(155);

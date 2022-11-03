@@ -12,18 +12,31 @@ var swiper = new Swiper(".tours-js", {
     prevEl: ".swiper-button-prev",
   },
 
-  // breakpoints: {
-  //   640: {
-  //     slidesPerView: 2,
-  //     spaceBetween: 20,
-  //   },
-  //   768: {
-  //     slidesPerView: 4,
-  //     spaceBetween: 40,
-  //   },
-  //   1024: {
-  //     slidesPerView: 5,
-  //     spaceBetween: 50,
-  //   },
-  // },
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    440: {
+      slidesPerView: 3,
+      spaceBetween: 5,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
+    1400: {
+      slidesPerView: 7,
+      spaceBetween: 30,
+    },
+
+  },
 });

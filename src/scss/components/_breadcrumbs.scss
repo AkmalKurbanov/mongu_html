@@ -1,5 +1,6 @@
 .breadcrumbs {
-  margin-bottom: rem(35);
+  @include adaptiv('margin-bottom', 35, 25, 0);
+
   ul {
     li {
       display: inline-block;
@@ -29,6 +30,11 @@
           color: $mc;
         }
       }
+    }
+
+    li,
+    a {
+      @include adaptiv('font-size', 16, 13, 0);
     }
   }
 }
