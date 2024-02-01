@@ -11,10 +11,10 @@
           .swiper-slide
             a(href="#").kind__item.shine-ef 
               .kind__img
-                img(src="assets/img/kind"+img+'.jpg', alt="") 
+                img(class="lazy" data-src="assets/img/kind"+img+'.jpg', alt="") 
               .kind__item-desc
                 .kind__icon  
-                  img(src="assets/img/kind-"+icon+'.png', alt="")
+                  img(class="lazy" data-src="assets/img/kind-"+icon+'.png', alt="")
                 .kind__name!=name
 
         +kind('1','horse','Конный <br> тур')

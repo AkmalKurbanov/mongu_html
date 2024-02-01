@@ -4,7 +4,7 @@ $('.search-js').on('click', function () {
 });
 
 	$(document).mouseup(function (e) { 
-	  var div = $(".search-form__input");
+	  var div = $(".search-form__input, .search-js");
 	  if (!div.is(e.target) 
 	    &&
 	    div.has(e.target).length === 0) {

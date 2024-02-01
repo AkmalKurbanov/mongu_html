@@ -5,7 +5,7 @@ footer.footer
         .footer__col
           .logo    
             a(href="#") 
-              img(src="assets/img/logo-white.svg", alt="")  
+              img(class="lazy" data-src="assets/img/logo-white.svg", alt="")  
         .footer__col
           .nav
             mixin list(data)
@@ -37,12 +37,14 @@ footer.footer
                   span
                     i(class="icon-"+icon)
                   if place 
-                    !=name
+                    div
+                      !=name
                   else
-                    a(href="#")!=name
-                      if phone == "phone"
-                        span.messenger 
-                          i.icon-whats    
+                    div
+                      a(href="#")!=name
+                        if phone == "phone"
+                          span.messenger 
+                            i.icon-whats    
               +contacts('marker','Кыргызстан, Иссык-Кульская обл., <br> г. Каракол, ул. Абдрахманова, 123, <br> кв. 20', 'place','')   
               +contacts('envelope','cbtkarakol@gmail.com','')   
               +contacts('phone','+996 555 150 795','', 'phone')   

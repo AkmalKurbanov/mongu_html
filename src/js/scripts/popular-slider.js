@@ -1,5 +1,4 @@
 var swiper = new Swiper(".block-tour-slider", {
-  loop: true,
   speed: 1000,
   autoplay: {
     delay: 2500,

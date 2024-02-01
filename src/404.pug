@@ -1,0 +1,18 @@
+extends layout/main/main
+block title
+  | rent
+block main
+  .wrapper
+    .content
+      .not-found
+        img.not-found__lg(src="assets/img/404.png", alt="")
+        img.not-found__sm(src="assets/img/404-768.png", alt="")
+        img.not-found__xs(src="assets/img/404-575.png", alt="")
+        
+        .not-found__bottom
+          p Страница не найдена
+          .not-found__btn-wrap
+            a.btn.btn--dark(href="/") На главную 
+            a.btn.btn--dark(href="/") Страница туров
+
+  include includes/scripts 

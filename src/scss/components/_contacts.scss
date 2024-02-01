@@ -35,5 +35,11 @@
   #map {
     height: rem(400);
     @include adaptiv('height', 400, 300, 0);
+    overflow-y: hidden;
+    iframe {
+      margin-top: rem(-50);
+      width: 100%;
+      height: calc(100% + 50px);
+    }
   }
 }

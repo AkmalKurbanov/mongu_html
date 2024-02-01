@@ -1,7 +1,6 @@
 var swiper = new Swiper(".kind-slider", {
   slidesPerView: 4,
   spaceBetween: 28,
-  loop: true,
   speed: 1000,
   autoplay: {
     delay: 5000,

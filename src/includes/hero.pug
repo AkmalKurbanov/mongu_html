@@ -15,25 +15,30 @@
       h2.booking__title Бронирование
       .booking__wrap
         .booking__col
-          form(action="")
-            .booking__item-wrap
-              .booking__item.booking__item--date
-                .booking__item-icon 
-                  i.icon-colendar
-                div
-                  .booking__item-title Дата 
-                  input(type="text" autocomplete="off")#datepicker 
-              .booking__item
-                .booking__item-icon 
-                  i.icon-user
-                div
-                  .booking__item-title Гости 
-                  .person-count
-                    input(type="number" value="2" min="1")
-                    span персоны
-              button.btn Бронировать
+          .booking__item-wrap
+            .booking__item.booking__item--date
+              .booking__item-icon 
+                i.icon-colendar
+              div  
+                .booking__item-title Дата 
+                .booking__date-wrap
+                  input#start-date(type='text' autocomplete="off" name='from' placeholder="07.12.22")
+                  | |
+                  input#end-date(type='text' autocomplete="off" name='to' disabled)
+            .booking__item
+              .booking__item-icon 
+                i.icon-user
+              div
+                .booking__item-title Гости 
+                .person-count
+                  input(type="number" value="2" min="1")
+                  span персоны
+            button.btn.booking-js(disabled) Бронировать
         .booking__col
           p Кыргызстан — это настоящая жемчужина Центральной Азии и одна из самых красивых и самобытных стран мира.
+          //- input#start-date(type='text' autocomplete="off" name='from')
+          //- | |
+          //- input#end-date(type='text' autocomplete="off" name='to')
 
     .block-tour 
       .swiper-container.block-tour-slider 
@@ -42,7 +47,7 @@
             .swiper-slide
               a(href="#").block-tour__item 
                 .block-tour__img
-                  img(src="assets/img/block-tour"+img+'.jpg', alt="") 
+                  img(class="lazy" data-src="assets/img/block-tour"+img+'.jpg', alt="") 
                 .block-tour__item-desc
                   .block-tour__name=name
                   .block-tour__desc=desc
@@ -52,3 +57,39 @@
           +block-tour('3','Каракольское ущелье','2 дневный тур')
           +block-tour('4','Ущелье Джети-Огуз','5-6 дневный тур')
           +block-tour('5','Энильчек','6 дневный тур')
+
+
+.booking-popup 
+  .booking-popup__window
+    .booking-popup__window-close &#x2715
+    h2 БРОНИРОВАНИЕ 
+    .booking-popup__total-info
+      .booking-popup__info-item
+        .booking-popup__total-item-title Количество человек
+        .booking-popup__total-item-value.person-count-js 10 человек
+      .booking-popup__info-item.booking-popup__info-item--date
+        div.booking-popup__date-wrap
+          .booking-popup__total-item-title Дата с
+          .booking-popup__total-item-value.date-from-js 07.12.22
+        div.booking-popup__date-wrap
+          .booking-popup__total-item-title по
+          .booking-popup__total-item-value.date-to-js 10.12.22
+
+    form(action="")
+      .input-wrap
+        input.booking-popup__person-value(type="hidden" value="")
+        input.booking-popup__date-from-value(type="hidden" value="")
+        input.booking-popup__date-to-value(type="hidden" value="")
+        .input
+          label(for="name") {{'Ф.И.О гостя'}}
+          input#name(type="text" name="Имя") 
+        .input
+          label(for="email") Email
+          input#email(type="text" name="Email") 
+        .input
+          label(for="phone") {{'Номер телефона'|_}} 
+          input#phone(type="text" name="Номер телефона") 
+
+        .booking-popup__btn-wrap
+          .btn.btn--red.booking-popup__cancel Отмена 
+          button(type="submit").btn Забронировать 

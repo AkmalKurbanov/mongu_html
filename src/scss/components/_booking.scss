@@ -2,10 +2,16 @@
   position: relative;
   z-index: 1;
 
-  p {
+  &__subtitle {
     color: rgba($wc, .8);
     @include adaptiv('font-size', 25, 16, 0);
     margin: 0;
+
+    * {
+      color: rgba($wc, .8);
+      @include adaptiv('font-size', 25, 16, 0);
+      margin: 0;
+    }
   }
 
   &__wrap {
@@ -18,20 +24,16 @@
   }
 
   &__col {
+    width: 50%;
+
+    @media(max-width: 1550px) {
+      width: 100%;
+    }
+
     &:first-child {
-      width: 40%;
 
       @media(max-width: 1550px) {
         margin-bottom: rem(20);
-        width: 100%;
-      }
-    }
-
-    &:last-child {
-      width: 57%;
-
-      @media(max-width: 1550px) {
-        width: 100%;
       }
     }
   }
@@ -45,7 +47,7 @@
   &__item-wrap {
     @include aic;
 
-    @include xs {
+    @include sm {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -62,16 +64,17 @@
     padding: rem(8) rem(15);
     margin-right: rem(14);
 
-    @include sm {
-      max-width: 33.33%;
-      min-width: 33.33%;
-    }
 
-    @include xs {
+    @include sm {
       margin-bottom: rem(10);
       max-width: rem(290);
       min-width: rem(290);
       margin-right: 0;
+    }
+
+    @media (max-width: 370px) {
+      max-width: 100%;
+      min-width: 100%;
     }
 
     &:nth-child(2) {
@@ -86,18 +89,31 @@
 
     &--date {
       position: relative;
+      max-width: rem(250);
+      min-width: rem(250);
+
+      @include sm {
+        max-width: rem(290);
+        min-width: rem(290);
+      }
+      @media (max-width: 370px) {
+        max-width: 100%;
+        min-width: 100%;
+      }
+
+      span {
+        position: relative;
+      }
 
       .ui-datepicker-trigger {
         font-family: icon;
         position: absolute;
-        right: rem(15);
-        top: 20px;
+        left: 0;
+        top: 0;
         cursor: pointer;
-      }
-
-      input {
-        margin-left: rem(-52);
-        padding-left: rem(-52);
+        position: absolute;
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -124,14 +140,34 @@
     }
   }
 
-  .btn {
-    @include sm {
-      width: 33.33%;
+  &__date-wrap {
+    @include aic;
+    width: 100%;
+
+    // font-size: rem();
+    #from {
+      margin-right: rem(3);
     }
 
-    @include xs {
+    #to {
+      margin-left: rem(3);
+    }
+  }
+
+  .btn {
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    @include sm {
       max-width: rem(290);
       min-width: rem(290);
+    }
+
+    @media (max-width: 370px) {
+      max-width: 100%;
+      min-width: 100%;
     }
   }
 

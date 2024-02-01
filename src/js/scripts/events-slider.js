@@ -1,5 +1,4 @@
 var swiper = new Swiper(".events-slider", {
-  loop: true,
   speed: 1000,
   autoplay: {
     delay: 5000,

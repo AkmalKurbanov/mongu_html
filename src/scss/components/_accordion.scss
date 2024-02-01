@@ -62,11 +62,13 @@
   }
 
   &__desc-img {
-    @include aic-jfcsb;
+    @include jfcsb-fww;
 
-    img {
-      display: inline-block;
+    a {
+      @include aic-jcc;
       max-width: calc(33.33% - 9px);
+      width: 100%;
+      margin-bottom: rem(10);
     }
   }
 }

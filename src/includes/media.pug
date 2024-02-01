@@ -7,7 +7,7 @@ include ../includes/breadcrumbs
       mixin photo
         a(href="assets/img/media.jpg" data-fancybox="gallery").media__item 
           .media__item-img
-            img(src="assets/img/media.jpg", alt="")
+            img(class="lazy" data-src="assets/img/media.jpg", alt="")
             .media__item-img-effect
               span
             .media__item-info
@@ -40,7 +40,7 @@ include ../includes/breadcrumbs
       mixin video(id)
         .media__item 
           .media__item-img
-            img(src="https://img.youtube.com/vi/"+id+"/maxresdefault.jpg", alt="")
+            img(class="lazy" data-src="https://img.youtube.com/vi/"+id+"/maxresdefault.jpg", alt="")
             .media__item-img-effect
               span
             .media__item-info

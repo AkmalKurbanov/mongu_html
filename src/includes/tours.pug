@@ -10,7 +10,7 @@ include ../includes/breadcrumbs
             .swiper-slide  
               a(href="#").tours__category-item  
                 .tours__category-icon
-                  img(src="assets/img/category-"+icon+".png", alt="")  
+                  img(class="lazy" data-src="assets/img/category-"+icon+".png", alt="")  
                 .tours__category-name=name
         
           +category('horse','Конные туры')      
@@ -22,7 +22,7 @@ include ../includes/breadcrumbs
       mixin tour
         .tours__item 
           a(href="#").tours__item-img
-            img(src="assets/img/tour.jpg", alt="") 
+            img(class="lazy" data-src="assets/img/tour.jpg", alt="") 
           .tours__item-info
             a(href="#").tours__item-name Алтын-Арашан
             .tours__item-desc Алтын-Арашан (в переводе «Золотой источник») <br>

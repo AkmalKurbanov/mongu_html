@@ -4,6 +4,8 @@
   &__category {
     margin-top: rem(10);
     @include adaptiv('margin-bottom', 70, 20, 0);
+    opacity: 0;
+    transition: $tr;
   }
 
   &__category-item {

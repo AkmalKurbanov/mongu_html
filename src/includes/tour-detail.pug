@@ -23,31 +23,38 @@ include ../includes/breadcrumbs
                   .accordion__desc
                     p В Алтын-Арашане проходит огромное количество туристических маршрутов. Это место используют как базовый лагерь для радиальных выходов, как перевалочный пункт по пути на Ала-Куль, в ущелье Ак-Суу или долину Каракола и Джеты-Огуза.
                   .accordion__desc-img
-                    img(src="assets/img/gallery1.jpg", alt="")
-                    img(src="assets/img/gallery2.jpg", alt="")
-                    img(src="assets/img/gallery3.jpg", alt="")
+                    a(href="assets/img/gallery1.jpg" data-fancybox="")
+                      img(class="lazy" data-src="assets/img/gallery1.jpg", alt="")
+                    a(href="assets/img/gallery2.jpg" data-fancybox="")
+                      img(class="lazy" data-src="assets/img/gallery2.jpg", alt="")
+                    a(href="assets/img/gallery3.jpg" data-fancybox="")
+                      img(class="lazy" data-src="assets/img/gallery3.jpg", alt="")
+                    a(href="assets/img/gallery4.jpg" data-fancybox="")
+                      img(class="lazy" data-src="assets/img/gallery4.jpg", alt="")
             +accordion('1 день тура')
             +accordion('2 день тура')
             +accordion('3 день тура')
         .desc-text__col
           .detail__desc 
-            .detail__title Краткое описание
-            ul 
-              li 
-                span Продолжительность:
-                | 2 дня
-              li 
-                span Уровень сложности:
-                | Средний
-              li 
-                span Лучший сезон:
-                | Май-Октябрь
-              li 
-                span Достопримечательности:
-                | Ущелье, конные прогулки, этно городок…
-              li 
-                span Требования:
-                | непромокаемая теплая одежда, трекинговые ботинки, головной убор, солнцезащитные очки, перчатки и солнцезащитный крем.
+            .detail__desc-wrap 
+
+              .detail__title Краткое описание
+              ul 
+                li 
+                  span Продолжительность:
+                  | 2 дня
+                li 
+                  span Уровень сложности:
+                  | Средний
+                li 
+                  span Лучший сезон:
+                  | Май-Октябрь
+                li 
+                  span Достопримечательности:
+                  | Ущелье, конные прогулки, этно городок…
+                li 
+                  span Требования:
+                  | непромокаемая теплая одежда, трекинговые ботинки, головной убор, солнцезащитные очки, перчатки и солнцезащитный крем.
 
             .detail__form
               form(action="") 
@@ -56,9 +63,12 @@ include ../includes/breadcrumbs
                 .booking__item.booking__item--date
                   .booking__item-icon 
                     i.icon-colendar
-                  div
+                  div  
                     .booking__item-title Дата 
-                    input(type="text" autocomplete="off")#datepicker 
+                    .booking__date-wrap
+                      input#from(type='text' autocomplete="off" name='from')
+                      | /
+                      input#to(type='text' autocomplete="off" name='to')
                 .booking__item
                   .booking__item-icon 
                     i.icon-user

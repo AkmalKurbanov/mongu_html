@@ -3,7 +3,8 @@
   @include adaptiv('min-height', 320, 200, 0);
   @include adaptiv('padding-top', 50, 30, 0);
   @include adaptiv('padding-bottom', 50, 30, 0);
-
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &__wrap {
     @include aic-jfcsb;
@@ -21,11 +22,7 @@
   p {
     font-weight: 500;
     @include adaptiv('font-size', 27, 16, 0);
-    line-height: normal;
-
-    @include md {
-      margin-bottom: rem(20);
-    }
+    line-height: normal;   
   }
 
   &:before {
@@ -38,5 +35,10 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+  }
+  .btn{
+     @include md {
+       margin-top: rem(20);
+     }
   }
 }

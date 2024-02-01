@@ -3,7 +3,7 @@ header.header
     .header__wrap 
       .logo 
         a(href="/")
-          img(src="assets/img/logo-black.svg", alt="")
+          img(class="lazy" data-src="assets/img/logo-black.svg", alt="")
       .header__left-col
         .nav
           mixin list(data)
@@ -33,11 +33,12 @@ header.header
               clippath#clip0_77_1126
                 rect(width='24' height='24' fill='white')
         .lang
-          ul  
-            li 
-              a(href="#") Ru  
-            li 
-              a(href="#") En  
+          .lang__item.active
+            a(href="#" data-lang="Ru") 
+              span Ru  
+          .lang__item
+            a(href="#" data-lang="En") 
+              span En 
         .hamburger 
           span
 .search-form 

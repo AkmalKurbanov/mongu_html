@@ -15,7 +15,9 @@ module.exports = function script() {
       'node_modules/jquery/dist/jquery.js',
       'node_modules/swiper/swiper-bundle.min.js',
       'node_modules/jquery-ui/ui/widgets/datepicker.js',
+      // 'node_modules/jquery-ui/ui/i18n/datepicker-ru.js',
       'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+      'node_modules/jquery-lazy/jquery.lazy.min.js',
       'src/js/scripts/*.js'
     ])
     // подключение библиотек

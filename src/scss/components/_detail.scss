@@ -52,6 +52,13 @@
   }
 
   &__desc {
+    @include md {
+      @include aifs-jfcsb;
+    }
+
+    @include sm {
+      @include fdc;
+    }
 
     li {
       @include adaptiv('margin-bottom', 15, 10, 0);
@@ -61,6 +68,16 @@
         line-height: rem(19);
         margin-right: rem(5);
       }
+    }
+  }
+
+  &__desc-wrap {
+    @include md {
+      width: 59%;
+    }
+
+    @include sm {
+      width: 100%;
     }
   }
 
@@ -77,6 +94,15 @@
     @include adaptiv('padding-bottom', 35, 10, 0);
     @include adaptiv('padding-left', 30, 10, 0);
     @include adaptiv('padding-right', 30, 10, 0);
+
+    @include md {
+      width: 40%;
+    }
+
+    @include sm {
+      width: 100%;
+      max-width: rem(400);
+    }
 
     form {
       @include jcc;

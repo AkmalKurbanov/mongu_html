@@ -4,11 +4,11 @@
       .img-group__col
         .img-group__images
           .img-group__item
-            img(src="assets/img/img1.jpg", alt="")
+            img(class="lazy" data-src="assets/img/img1.jpg", alt="")
           .img-group__item
-            img(src="assets/img/img2.jpg", alt="")
+            img(class="lazy" data-src="assets/img/img2.jpg", alt="")
           .img-group__item
-            img(src="assets/img/img3.jpg", alt="")
+            img(class="lazy" data-src="assets/img/img3.jpg", alt="")
       .img-group__col
         .title-wrap
           h2.title АРЕНДА
@@ -27,7 +27,7 @@
       mixin icon(icon,name)  
         .icon-list__item
           .icon-list__icon
-            img(src="assets/img/icon"+icon+".png", alt="")
+            img(class="lazy" data-src="assets/img/icon"+icon+".png", alt="")
           .icon-list__name=name
       +icon('1','Палатка')     
       +icon('2','Спальный мешок')     

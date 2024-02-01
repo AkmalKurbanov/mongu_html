@@ -5,7 +5,7 @@
     .popular__wrap
       mixin popular(img,name,place)   
         a(href="#").popular__item
-          img(src="assets/img/popular"+img+".jpg", alt="")
+          img(class="lazy" data-src="assets/img/popular"+img+".jpg", alt="")
           .popular__desc
             .popular__name=name
             .popular__place=place

@@ -1,7 +1,6 @@
 var swiper = new Swiper(".tours-js", {
   slidesPerView: 7,
   spaceBetween: 30,
-  loop: true,
   speed: 1000,
   autoplay: {
     delay: 5000,
@@ -39,4 +38,10 @@ var swiper = new Swiper(".tours-js", {
     },
 
   },
+});
+
+$(document).ready(function () {
+  setTimeout(function () {
+    $('.tours__category').css('opacity', 1);
+  }, 500);
 });

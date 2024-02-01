@@ -30,6 +30,22 @@
           color: $mc;
         }
       }
+
+      &.active {
+        pointer-events: none;
+
+        &:hover {
+          color: $gc;
+        }
+
+        a {
+          pointer-events: none;
+
+          &:hover {
+            color: $gc;
+          }
+        }
+      }
     }
 
     li,

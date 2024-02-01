@@ -4,7 +4,7 @@ $('.hamburger').on('click', function () {
 });
 
 $(document).mouseup(function (e) {
-  var div = $(".nav.open");
+  var div = $(".nav.open, .booking-popup");
   if (!div.is(e.target) &&
     div.has(e.target).length === 0) {
     div.removeClass('open');

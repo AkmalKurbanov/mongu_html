@@ -3,8 +3,20 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     @include adaptiv('border-radius', 23, 14, 0);
     @include adaptiv('min-width', 559, 150, 0);
+    max-width: rem(550);
+    width: 100%;
 
+    &.fr-fic.fr-dib.fr-fil {
+      float: left;
+    }
 
+    &.fr-fic.fr-dib {
+      text-align: center;
+    }
+
+    &.fr-fic.fr-dib.fr-fir {
+      float: right;
+    }
   }
 
   h1,
@@ -21,9 +33,11 @@
     @include adaptiv('font-size', 20, 15, 0);
   }
 
-  .subtitle {
+  h3 {
     display: block;
     @include adaptiv('margin-bottom', 50, 25, 0);
+    font-weight: 500;
+    @include adaptiv('font-size', 27, 15, 0);
   }
 
 

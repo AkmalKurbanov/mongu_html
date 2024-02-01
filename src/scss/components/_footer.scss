@@ -43,7 +43,6 @@
     }
 
     &:first-child {
-      @include aic;
 
       @include md {
         order: 1;
@@ -161,6 +160,10 @@
 
   .social {
     @include jcc;
+
+    li {
+      list-style-type: none;
+    }
   }
 
   &__bottom {
