@@ -1,0 +1,18 @@
+.advantages
+  .container 
+    .title-wrap.title-wrap  
+      h2.title Why Travel with CBT Karakol?
+    .advantages__inner
+      mixin advantage(icon, title, desc)
+        .advantages__col
+          .advantages__item
+            .advantages__icon 
+              img(src="assets/img/advantage"+icon+".png", alt="")
+            .advantages__title!=title 
+            .advantages__desc!=desc 
+
+
+      +advantage('','Community Based Tourism','We help, train and support locals to earn income from tourism.')
+      +advantage('','Local Expertise','We’re a local tour operator with deep local knowledge and expertise. When you book directly with us, you get the best possible price.')
+      +advantage('','Grouping Travelers','We help travelers to find like-minded people to travel together and share costs.')
+      +advantage('','100 % Customizable','Tell us about your interest and needs. We’ll work together with you to customize your trip for the best experience.')

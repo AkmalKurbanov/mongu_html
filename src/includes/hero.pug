@@ -43,20 +43,23 @@
     .block-tour 
       .swiper-container.block-tour-slider 
         .swiper-wrapper
-          mixin block-tour(img,name,desc)
+          mixin block-tour(img,name,desc,imgCategory)
             .swiper-slide
               a(href="#").block-tour__item 
                 .block-tour__img
                   img(class="lazy" data-src="assets/img/block-tour"+img+'.jpg', alt="") 
+                  .block-tour__category-icon
+                    img(class="lazy" data-src="assets/img/"+imgCategory+'.png', alt="") 
+                  
                 .block-tour__item-desc
                   .block-tour__name=name
                   .block-tour__desc=desc
 
-          +block-tour('1','Алтын-Арашан','2 дневный тур')
-          +block-tour('2','озеро Алаколь','3-4 дневный тур')
-          +block-tour('3','Каракольское ущелье','2 дневный тур')
-          +block-tour('4','Ущелье Джети-Огуз','5-6 дневный тур')
-          +block-tour('5','Энильчек','6 дневный тур')
+          +block-tour('1','Алтын-Арашан','2 дневный тур','kind-walk')
+          +block-tour('2','озеро Алаколь','3-4 дневный тур','kind-walk')
+          +block-tour('3','Каракольское ущелье','2 дневный тур','kind-horse')
+          +block-tour('4','Ущелье Джети-Огуз','5-6 дневный тур','kind-walk')
+          +block-tour('5','Энильчек','6 дневный тур','kind-walk')
 
 
 .booking-popup 

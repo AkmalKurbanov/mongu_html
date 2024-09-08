@@ -1,0 +1,37 @@
+.advantages
+  &__inner
+    display: flex
+    margin-left: rem(-10)
+    margin-right: rem(-10)
+
+  &__col
+    padding: 0 rem(10)
+    width: 25%
+    
+
+  &__item
+    text-align: center
+    @include fdc-aic
+
+  &__icon
+    width: rem(100)
+    height: rem(100)
+    position: relative
+    border: 1px solid $mc 
+    border-radius: 100%
+    @include ic-jcc
+    margin-bottom: rem(20)
+
+    img
+      max-width: rem(50)
+      max-height: rem(50)
+      object-fit: contain
+      object-position: center
+
+  &__title
+    margin-bottom: rem(20)
+    font-weight: 600
+    font-size: rem(18)
+
+  &__desc
+    font-size: rem(16)
